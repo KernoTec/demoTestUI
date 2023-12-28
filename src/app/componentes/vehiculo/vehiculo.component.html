@@ -1,0 +1,54 @@
+<h2>Administrador de Vehiculos</h2>
+<button type="button" class="btn btn-primary btn-lg btn-block" routerLink="/VehiculoForm">Adicionar</button>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Marca</th>
+        <th scope="col">Modelo</th>
+        <th scope="col">Año</th>
+        <th scope="col">placa</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let vehiculo of vehiculos">
+        <th scope="row">{{vehiculo.marca}}</th>
+        <td>{{vehiculo.modelo}}</td>
+        <td>{{vehiculo.anio}}</td>
+        <td>{{vehiculo.placa}}</td>
+        <td>
+          <button type="button" class="btn btn-info" (click)="goEdit(vehiculo)">Editar</button>
+          <button type="button" class="btn btn-danger" (click)="remove(vehiculo)">Eliminar</button>
+          <button type="button" class="btn btn-secondary" (click)="mostrarAsing(vehiculo)"> Asignar Vehiculo</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="container" [hidden]="showAsignar">
+    <div class="row">
+      <div class="col-sm">
+          <div class="card">
+              <div class="card-header">
+              Asignar
+              </div>
+              <div class="card-body">
+                <form>
+                  <div class="form-group">
+                    <label for="numdoc">Ingrese numero de documento del cliente</label>
+                    <input type="number" class="form-control" id="numdoc" [(ngModel)]="clienteAsing.numeroDocumento" name="numeroDocumento" aria-describedby="emailHelp" placeholder="Nro. Doc.">
+                  </div>
+              
+                  <button type="submit" class="btn btn-primary" (click)="buscar(clienteAsing.numeroDocumento)" >Buscar</button>
+                  <div class="alert alert-primary" role="alert">
+                    {{clienteAsing.nombre+" "+clienteAsing.paterno+" "+clienteAsing.materno}}
+                  </div>
+              
+                  <button type="submit" [hidden]="showbtn" class="btn btn-primary" (click)="asignar()">Asignar</button>
+                </form>
+                </div>
+          </div>
+      </div>
+    </div>
+  </div>        
+  

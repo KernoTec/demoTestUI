@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="row">
+      <div class="col-sm">
+          <div class="card">
+              <div class="card-header">
+              {{labelTitulo}}
+              </div>
+              <div class="card-body">
+                  <form>
+                      <div class="form-group">
+                      <label for="InputMarca">Marca</label>
+                      <input type="text" class="form-control" id="InputMarca" [(ngModel)]="vehiculo.marca" placeholder="Ingrese Marca" name="marca">
+                      </div>
+                      <div class="form-group">
+                      <label for="InputModelo">modelo</label>
+                      <input type="text" class="form-control" id="InputModelo" [(ngModel)]="vehiculo.modelo" placeholder="Ingrese Modelo" name="modelo">
+                      </div>
+                      <div class="form-group">
+                          <label for="InputAnio">Año</label>
+                          <input type="number" class="form-control" id="InputAnio" [(ngModel)]="vehiculo.anio" placeholder="Ingrese Año" name="anio">
+                      </div>
+                      <div class="form-group">
+                        <label for="InputPlaca">modelo</label>
+                        <input type="text" class="form-control" id="InputPlaca" [(ngModel)]="vehiculo.placa" placeholder="Ingrese placa" name="placa">
+                        </div>
+                      <br />
+                      <button type="submit" class="btn btn-primary" (click)="add()">Guardar</button>
+                  </form>      
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+  
