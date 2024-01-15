@@ -2,3 +2,12 @@
 /* @import "~bootstrap/dist/css/bootstrap.css"; */
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.title-content{
+  font-size: 2rem!important;
+  text-align: center;
+  margin-bottom: 2rem!important;
+}
+.pointer{
+  cursor: pointer;
+}
