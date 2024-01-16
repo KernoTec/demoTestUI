@@ -1,1 +1,79 @@
-<p>create-edit-customer works!</p>
+<h2 class="title-content">{{ action }} Rol</h2>
+
+<mat-divider class="mb-2"></mat-divider>
+<mat-card>
+  <mat-card-content>
+    <form
+      action=""
+      (ngSubmit)="createEditCustomer()"
+      [formGroup]="formCustomer"
+    >
+      <div class="grid">
+        <mat-form-field class="col-12 sm:col-3">
+          <mat-label>Nombre:</mat-label>
+          <input type="text" matInput formControlName="nombre" required />
+        </mat-form-field>
+
+        <mat-form-field class="col-12 sm:col-3">
+          <mat-label>Paterno:</mat-label>
+          <input type="text" matInput formControlName="paterno" required />
+        </mat-form-field>
+
+        <mat-form-field class="col-12 sm:col-3">
+          <mat-label>Materno:</mat-label>
+          <input type="text" matInput formControlName="materno" required />
+        </mat-form-field>
+
+        <mat-form-field class="col-12 sm:col-3">
+          <mat-label>Tipo De Documento:</mat-label>
+          <mat-select formControlName="tipoDocumento">
+            <mat-option
+              *ngFor="let document of documentsType"
+              [value]="document.value"
+              >{{ document.id }}</mat-option
+            >
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="col-12 sm:col-3">
+          <mat-label>Cedula de Identidad:</mat-label>
+          <input type="text" matInput formControlName="ci" required />
+        </mat-form-field>
+
+        <mat-form-field class="col-12 sm:col-3">
+          <mat-label>Fecha de Nacimiento:</mat-label>
+          <input
+            type="date"
+            matInput
+            formControlName="fechaNacimiento"
+            required
+          />
+        </mat-form-field>
+
+        <mat-form-field class="col-12 sm:col-3">
+          <mat-label>Género:</mat-label>
+          <mat-select formControlName="genero">
+            <mat-option *ngFor="let gender of genders" [value]="gender.value">{{
+              gender.id
+            }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="flex justify-content-between">
+        <button
+          type="button"
+          (click)="deleteCustomer()"
+          [disabled]="this.paramsId == undefined"
+          mat-flat-button
+          color="warn"
+        >
+          <mat-icon>delete</mat-icon>Eliminar
+        </button>
+        <button mat-flat-button color="primary">
+          <mat-icon>add_circle</mat-icon>{{ action }}
+        </button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>
