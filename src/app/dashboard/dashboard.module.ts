@@ -9,6 +9,7 @@ import { CreateEditVehiclesComponent } from './pages/vehicles/create-edit-vehicl
 import { NavbarComponent } from './layout/navbar.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ConfirmDialogComponent } from './pages/components/confirm-dialog/confirm-dialog.component';
+import { SearchComponent } from './pages/search/search.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ConfirmDialogComponent } from './pages/components/confirm-dialog/confir
     CreateEditCustomerComponent,
     ShowVehiclesComponent,
     CreateEditVehiclesComponent,
-    ConfirmDialogComponent
+    ConfirmDialogComponent,
+    SearchComponent
   ],
   imports: [
     CommonModule,

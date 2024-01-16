@@ -89,17 +89,21 @@ export class CreateEditCustomerComponent {
   }
 
   createEditCustomer(){
-    let customer:Customer = this.formCustomer.value
-    if(this.paramsId==undefined){
-      this.createCustomer(customer);
-      setTimeout(()=>{
-        this.router.navigate(['/dashboard/customer'])
-      },2500)
+    if(this.formCustomer.valid){
+      let customer:Customer = this.formCustomer.value
+      if(!this.paramsId){
+        this.createCustomer(customer);
+        setTimeout(()=>{
+          this.router.navigate(['/dashboard/customer'])
+        },2500)
+      }else{
+        this.editCustomer(customer, this.paramsId);
+        setTimeout(()=>{
+          this.router.navigate(['/dashboard/customer'])
+        },2500)
+      }
     }else{
-      this.editCustomer(customer, this.paramsId);
-      setTimeout(()=>{
-        this.router.navigate(['/dashboard/customer'])
-      },2500)
+      this.showSnackbar("Todos los campos son obligatorios");
     }
   }
 

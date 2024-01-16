@@ -13,8 +13,7 @@
       "marca": "Honda",
       "modelo": "Civic 5Dr",
       "anio": 2024,
-      "placa": "6305KOP",
-      "customerId": "2"
+      "placa": "6305KOP"
     },
     {
       "id": "3",
@@ -37,8 +36,7 @@
       "marca": "RAM",
       "modelo": "Classic 2WD",
       "anio": 2023,
-      "placa": "6299LET",
-      "customerId": "5"
+      "placa": "6299LET"
     },
     {
       "id": "6",
@@ -57,12 +55,12 @@
       "customerId": "5"
     },
     {
-      "id": "8",
       "marca": "Hyundai",
       "modelo": "Ioniq Plug-in",
       "anio": 2019,
       "placa": "5214GHY",
-      "customerId": "1"
+      "customerId": "7",
+      "id": "8"
     },
     {
       "id": "9",
@@ -97,12 +95,11 @@
       "customerId": "5"
     },
     {
-      "id": "13",
       "marca": "land Rover",
       "modelo": "Range Rover",
       "anio": 2021,
       "placa": "5414SEM",
-      "customerId": "1"
+      "id": "13"
     },
     {
       "id": "14",
@@ -125,7 +122,15 @@
       "modelo": "Outback AWD",
       "anio": "2024",
       "placa": "6510POO",
-      "id": "ca7c"
+      "id": "16"
+    },
+    {
+      "marca": "Yamaha",
+      "modelo": "r15",
+      "anio": "2019",
+      "placa": "4325SEM",
+      "customerId": null,
+      "id": "7f6d"
     }
   ],
   "customers": [
@@ -200,14 +205,14 @@
       "genero": "Masculino"
     },
     {
-      "nombre": "Jhosepp",
-      "paterno": "Brush",
-      "materno": "Patterson",
-      "tipoDocumento": "Cedula de Identidad",
-      "ci": "6822668LP",
-      "fechaNacimiento": "1996-11-09",
-      "genero": "Femenino",
-      "id": "bdc7"
+      "id": "e001",
+      "nombre": "Byron",
+      "paterno": "Rachett",
+      "materno": "Less",
+      "tipoDocumento": "Pasaporte",
+      "ci": "12340125",
+      "fechaNacimiento": "1990-11-25",
+      "genero": "Masculino"
     }
   ]
 }

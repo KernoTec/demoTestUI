@@ -5,6 +5,7 @@ import { ShowCustomerComponent } from './pages/customers/show-customer/show-cust
 import { CreateEditCustomerComponent } from './pages/customers/create-edit-customer/create-edit-customer.component';
 import { ShowVehiclesComponent } from './pages/vehicles/show-vehicles/show-vehicles.component';
 import { CreateEditVehiclesComponent } from './pages/vehicles/create-edit-vehicles/create-edit-vehicles.component';
+import { SearchComponent } from './pages/search/search.component';
 
 const routes: Routes = [
   {
@@ -34,6 +35,10 @@ const routes: Routes = [
       {
         path:'vehicle/edit/:id',
         component: CreateEditVehiclesComponent
+      },
+      {
+        path:'search',
+        component:SearchComponent
       },
       {
         path:'**',

@@ -8,7 +8,7 @@ import { VehiclesService } from 'src/app/dashboard/services/vehicles/vehicles.se
   styleUrls: ['./show-vehicles.component.css']
 })
 export class ShowVehiclesComponent {
-  displayedColumns: string[] = ['marca', 'modelo', 'anio', 'placa', 'acciones'];
+  displayedColumns: string[] = ['marca', 'modelo', 'anio', 'placa', 'cliente','acciones'];
   dataSource = new MatTableDataSource();
   dataVehicles:any = [];
   private _vehiclesService = inject(VehiclesService);

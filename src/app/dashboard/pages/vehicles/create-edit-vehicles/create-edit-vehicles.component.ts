@@ -7,6 +7,8 @@ import { Vehicle } from 'src/app/dashboard/interfaces/vehicle.interface';
 import { VehiclesService } from 'src/app/dashboard/services/vehicles/vehicles.service';
 import { ConfirmDialogComponent } from '../../components/confirm-dialog/confirm-dialog.component';
 import { filter, switchMap } from 'rxjs';
+import { Customer } from 'src/app/dashboard/interfaces/customer.interface';
+import { CustomersService } from 'src/app/dashboard/services/customers/customers.service';
 
 @Component({
   selector: 'app-create-edit-vehicles',
@@ -15,6 +17,7 @@ import { filter, switchMap } from 'rxjs';
 })
 export class CreateEditVehiclesComponent {
   private _vehiclesService = inject(VehiclesService);
+  private _customerService = inject(CustomersService);
   private fb = inject(FormBuilder);
   private router = inject(Router);
   private activateRouter = inject(ActivatedRoute);
@@ -25,16 +28,19 @@ export class CreateEditVehiclesComponent {
   vehicle:any;
   action:string = "";
   paramsId:number = 0;
+  customers:Customer[] = [];
 
   public formVehicles:FormGroup = this.fb.group({
     marca: ['', [Validators.required, Validators.minLength(3)]],
     modelo: ['', [Validators.required, Validators.minLength(3)]],
     anio: ['', [Validators.required, Validators.minLength(3)]],
-    placa: ['', [Validators.required]]
+    placa: ['', [Validators.required]],
+    customerId:['']
   });
 
   constructor(){
     this.paramsId = this.activateRouter.snapshot.params['id'];
+    this.getCustomers();
     if(this.paramsId){
       this.getVehicle(this.paramsId);
       this.action = "Editar";
@@ -54,27 +60,43 @@ export class CreateEditVehiclesComponent {
     })
   }
 
+  getCustomers(){
+    this._customerService.getCustomers().subscribe({
+      next:data=>{
+        this.customers = data;
+        console.log(this.customers)
+      },
+      error: error=>console.log(error)
+    })
+  }
+
   showVehicle(vehicle:Vehicle){
     this.formVehicles.setValue({
       marca:vehicle.marca,
       modelo:vehicle.modelo,
       anio:vehicle.anio,
-      placa:vehicle.placa
+      placa:vehicle.placa,
+      customerId: vehicle.customerId || ""
     })
   }
 
   createEditVehicle(){
-    let vehicle:Vehicle = this.formVehicles.value
-    if(!this.paramsId){
-      this.createVehicle(vehicle);
-      setTimeout(()=>{
-        this.router.navigate(['/dashboard/vehicle'])
-      },2500)
+    if(this.formVehicles.valid){
+      let vehicle:Vehicle = this.formVehicles.value
+      if(!this.paramsId){
+        this.createVehicle(vehicle);
+        setTimeout(()=>{
+          this.router.navigate(['/dashboard/vehicle'])
+        },2500)
+      }else{
+        this.editVehicle(vehicle, this.paramsId);
+        setTimeout(()=>{
+          this.router.navigate(['/dashboard/vehicle'])
+        },2500)
+      }
+
     }else{
-      this.editVehicle(vehicle, this.paramsId);
-      setTimeout(()=>{
-        this.router.navigate(['/dashboard/vehicle'])
-      },2500)
+      this.showSnackbar("Todos los campos son requeridos");
     }
   }
 

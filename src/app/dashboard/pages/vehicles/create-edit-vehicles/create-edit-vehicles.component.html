@@ -24,6 +24,17 @@
           <mat-label>Placa:</mat-label>
           <input type="text" matInput formControlName="placa" required />
         </mat-form-field>
+        <mat-form-field class="col-12 sm:col-3">
+          <mat-label
+            >Asignar a Cliente
+            <span class="optional"> (Opcional)</span></mat-label
+          >
+          <mat-select formControlName="customerId">
+            <mat-option *ngFor="let customer of customers" [value]="customer.id"
+              >{{ customer.nombre }} - {{ customer.paterno }}</mat-option
+            >
+          </mat-select>
+        </mat-form-field>
       </div>
 
       <div class="flex justify-content-between">

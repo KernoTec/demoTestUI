@@ -12,7 +12,7 @@ export class CustomersService {
   constructor() { }
 
   getCustomers(){
-    return this.httpService.get(`${this.baseUrl}/customers`)
+    return this.httpService.get<Customer[]>(`${this.baseUrl}/customers`)
   }
   saveCustomer(customer:Customer){
     return this.httpService.post(`${this.baseUrl}/customers`, customer);

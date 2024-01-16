@@ -14,7 +14,6 @@ export class ShowCustomerComponent {
   dataSource = new MatTableDataSource();
   dataCustomers:any = [];
   private _customerService = inject(CustomersService);
-  private router = inject(Router);
   constructor(){
     this.getCustomers();
   }

@@ -23,4 +23,5 @@ export class NavbarComponent {
       label:'Crear', url:'./vehicle/create'
     },
   ]
+
 }
