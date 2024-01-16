@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { NavbarComponent } from './components/navbar/navbar.component';
+import { NavbarComponent } from './layout/navbar.component';
 import { ShowCustomerComponent } from './pages/customers/show-customer/show-customer.component';
 import { CreateEditCustomerComponent } from './pages/customers/create-edit-customer/create-edit-customer.component';
 import { ShowVehiclesComponent } from './pages/vehicles/show-vehicles/show-vehicles.component';
@@ -24,15 +24,15 @@ const routes: Routes = [
         component: CreateEditCustomerComponent
       },
       {
-        path:'vehicles',
+        path:'vehicle',
         component: ShowVehiclesComponent
       },
       {
-        path:'vehicles/create',
+        path:'vehicle/create',
         component: CreateEditVehiclesComponent
       },
       {
-        path:'vehicles/edit/:id',
+        path:'vehicle/edit/:id',
         component: CreateEditVehiclesComponent
       },
       {

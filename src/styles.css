@@ -3,6 +3,9 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+.container{
+  padding: 1.5rem;
+}
 .title-content{
   font-size: 2rem!important;
   text-align: center;
@@ -10,4 +13,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 .pointer{
   cursor: pointer;
+}
+@media(width<=768px){
+  .table-container{
+    overflow-x: scroll!important;
+    width: 100%;
+  }
 }

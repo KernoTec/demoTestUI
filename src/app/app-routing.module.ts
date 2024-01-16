@@ -3,8 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: 'tutorials', pathMatch: 'full' },
- 
+  {
+    path: 'dashboard',
+    loadChildren: ()=> import("./dashboard/dashboard.module").then(m=>m.DashboardModule)
+  },
+
 ];
 
 @NgModule({
