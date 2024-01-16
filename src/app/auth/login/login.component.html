@@ -1,0 +1,32 @@
+<div class="form flex flex-column">
+  <span class="mb-5 text-center title-form"> Login </span>
+  <form [formGroup]="formLogin" (ngSubmit)="login()">
+    <div class="grid">
+      <mat-form-field class="col-12">
+        <mat-label>Usuario</mat-label>
+        <input
+          type="text"
+          matInput
+          placeholder="Nombre de usuario"
+          formControlName="username"
+        />
+      </mat-form-field>
+      <mat-form-field class="col-12">
+        <mat-label>Contraseña</mat-label>
+        <input
+          type="password"
+          matInput
+          placeholder="Contraseña"
+          formControlName="password"
+        />
+      </mat-form-field>
+      <button mat-button mat-flat-button class="col-12" color="primary">
+        Ingresar
+        <mat-icon>send</mat-icon>
+      </button>
+      <div class="loading-container" *ngIf="stateLogin">
+        <app-loading></app-loading>
+      </div>
+    </div>
+  </form>
+</div>

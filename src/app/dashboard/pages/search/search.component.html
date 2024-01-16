@@ -1,0 +1,61 @@
+<h2 class="title-content">Buscar Vehículos asignados a un cliente</h2>
+
+<mat-divider class="mb-2"></mat-divider>
+<mat-card>
+  <mat-card-content>
+    <div class="grid">
+      <div class="col-12 sm:col-8 m-auto">
+        <form action="" (ngSubmit)="sendTerm()" [formGroup]="formSearch">
+          <div class="grid">
+            <mat-form-field class="col-12 sm:col-12">
+              <mat-label>Número de documento:</mat-label>
+              <input type="text" matInput formControlName="term" required />
+            </mat-form-field>
+            <div class="flex justify-content-end col-12 sm:col-12">
+              <button mat-flat-button color="primary" class="btn-search">
+                <mat-icon>add_circle</mat-icon>Buscar
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+<div *ngIf="stateTable" class="table-result">
+  <h2 class="title-content">
+    Vehículos Encontrados del cliente con ci
+    <span class="ci">{{ ciCustomer }}</span>
+  </h2>
+  <div class="table-container">
+    <table
+      mat-table
+      [dataSource]="dataSource"
+      class="mat-elevation-z8 demo-table"
+    >
+      <ng-container matColumnDef="marca">
+        <th mat-header-cell *matHeaderCellDef>Marca</th>
+        <td mat-cell *matCellDef="let element">{{ element.marca }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="modelo">
+        <th mat-header-cell *matHeaderCellDef>Modelo</th>
+        <td mat-cell *matCellDef="let element">{{ element.modelo }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="anio">
+        <th mat-header-cell *matHeaderCellDef>Año</th>
+        <td mat-cell *matCellDef="let element">{{ element.anio }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="placa">
+        <th mat-header-cell *matHeaderCellDef>Placa</th>
+        <td mat-cell *matCellDef="let element">{{ element.placa }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
+</div>

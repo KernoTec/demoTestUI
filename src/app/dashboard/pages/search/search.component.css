@@ -1,0 +1,12 @@
+@media(width<=768px){
+  .btn-search{
+      width: 100%;
+  }
+}
+.table-result{
+  margin-top: 2rem;
+}
+.ci{
+  color:#3f51b5 ;
+  text-decoration: underline;
+}

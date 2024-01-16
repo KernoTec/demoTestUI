@@ -1,0 +1,218 @@
+{
+  "vehicles": [
+    {
+      "id": "1",
+      "marca": "Toyota",
+      "modelo": "Hilux",
+      "anio": 2019,
+      "placa": "5214GHY",
+      "customerId": "1"
+    },
+    {
+      "id": "2",
+      "marca": "Honda",
+      "modelo": "Civic 5Dr",
+      "anio": 2024,
+      "placa": "6305KOP"
+    },
+    {
+      "id": "3",
+      "marca": "Porsche",
+      "modelo": "Macan",
+      "anio": 2024,
+      "placa": "6309JNU",
+      "customerId": "5"
+    },
+    {
+      "id": "4",
+      "marca": "Rolls-Royce",
+      "modelo": "Cullinan",
+      "anio": 2023,
+      "placa": "6200VAR",
+      "customerId": "6"
+    },
+    {
+      "id": "5",
+      "marca": "RAM",
+      "modelo": "Classic 2WD",
+      "anio": 2023,
+      "placa": "6299LET"
+    },
+    {
+      "id": "6",
+      "marca": "Ford",
+      "modelo": "Hybrid FWD",
+      "anio": 2018,
+      "placa": "5911NAN",
+      "customerId": "5"
+    },
+    {
+      "id": "7",
+      "marca": "Volvo",
+      "modelo": "XC90 AWD PHEV",
+      "anio": 2016,
+      "placa": "5410DOM",
+      "customerId": "5"
+    },
+    {
+      "marca": "Hyundai",
+      "modelo": "Ioniq Plug-in",
+      "anio": 2019,
+      "placa": "5214GHY",
+      "customerId": "7",
+      "id": "8"
+    },
+    {
+      "id": "9",
+      "marca": "Volvo",
+      "modelo": "S60 AWD PHEV",
+      "anio": 2020,
+      "placa": "5259TRY",
+      "customerId": "4"
+    },
+    {
+      "id": "10",
+      "marca": "Mercedes-Benz",
+      "modelo": "E450 Convertible",
+      "anio": 2023,
+      "placa": "5960UII",
+      "customerId": "2"
+    },
+    {
+      "id": "11",
+      "marca": "MINI",
+      "modelo": "Cooper Clubman",
+      "anio": 2024,
+      "placa": "6328UXX",
+      "customerId": "2"
+    },
+    {
+      "id": "12",
+      "marca": "BMW",
+      "modelo": "XM",
+      "anio": 2023,
+      "placa": "5971SEO",
+      "customerId": "5"
+    },
+    {
+      "marca": "land Rover",
+      "modelo": "Range Rover",
+      "anio": 2021,
+      "placa": "5414SEM",
+      "id": "13"
+    },
+    {
+      "id": "14",
+      "marca": "Mitsubishi",
+      "modelo": "Outlaander PHEV",
+      "anio": 2022,
+      "placa": "5810PPT",
+      "customerId": "2"
+    },
+    {
+      "id": "15",
+      "marca": "Jeep",
+      "modelo": "Wrangler 4dr",
+      "anio": 2021,
+      "placa": "5385JAR",
+      "customerId": "3"
+    },
+    {
+      "marca": "Subaru",
+      "modelo": "Outback AWD",
+      "anio": "2024",
+      "placa": "6510POO",
+      "id": "16"
+    },
+    {
+      "marca": "Yamaha",
+      "modelo": "r15",
+      "anio": "2019",
+      "placa": "4325SEM",
+      "customerId": null,
+      "id": "7f6d"
+    }
+  ],
+  "customers": [
+    {
+      "id": "1",
+      "nombre": "Roberto",
+      "paterno": "Perez",
+      "materno": "Lopez",
+      "tipoDocumento": "Cedula de Identidad",
+      "ci": "789456CBBA",
+      "fechaNacimiento": "1960-02-10",
+      "genero": "Masculino"
+    },
+    {
+      "id": "2",
+      "nombre": "Ervin",
+      "paterno": "Howell",
+      "materno": "Lanus",
+      "tipoDocumento": "Licencia de Conducir",
+      "ci": "6985125LP",
+      "fechaNacimiento": "1972-10-05",
+      "genero": "Masculino"
+    },
+    {
+      "id": "3",
+      "nombre": "Clementine",
+      "paterno": "Bauch",
+      "materno": "Busch",
+      "tipoDocumento": "Pasaporte",
+      "ci": "6545102SCZ",
+      "fechaNacimiento": "1960-03-01",
+      "genero": "Femenino"
+    },
+    {
+      "id": "4",
+      "nombre": "Leanne",
+      "paterno": "Graham",
+      "materno": "Valdivia",
+      "tipoDocumento": "Cedula de Identidad",
+      "ci": "7258110LP",
+      "fechaNacimiento": "1980-11-15",
+      "genero": "Femenino"
+    },
+    {
+      "id": "5",
+      "nombre": "Patricia",
+      "paterno": "Lebsack",
+      "materno": "Lanus",
+      "tipoDocumento": "Cedula de Identidad",
+      "ci": "7850125CBBA",
+      "fechaNacimiento": "1980-02-10",
+      "genero": "Femenino"
+    },
+    {
+      "id": "6",
+      "nombre": "Nicholas",
+      "paterno": "Runolfsdottir",
+      "materno": "Niewon",
+      "tipoDocumento": "Pasaporte",
+      "ci": "6845102SCZ",
+      "fechaNacimiento": "1965-03-01",
+      "genero": "Masculino"
+    },
+    {
+      "id": "7",
+      "nombre": "Jean",
+      "paterno": "Lower",
+      "materno": "Prost",
+      "tipoDocumento": "Cedula de Identidad",
+      "ci": "7505219LP",
+      "fechaNacimiento": "1988-09-11",
+      "genero": "Masculino"
+    },
+    {
+      "id": "e001",
+      "nombre": "Byron",
+      "paterno": "Rachett",
+      "materno": "Less",
+      "tipoDocumento": "Pasaporte",
+      "ci": "12340125",
+      "fechaNacimiento": "1990-11-25",
+      "genero": "Masculino"
+    }
+  ]
+}
