@@ -58,8 +58,8 @@
     },
     {
       "id": "8",
-      "marca": "",
-      "modelo": "Hilux",
+      "marca": "Hyundai",
+      "modelo": "Ioniq Plug-in",
       "anio": 2019,
       "placa": "5214GHY",
       "customerId": "1"
@@ -121,12 +121,11 @@
       "customerId": "3"
     },
     {
-      "id": "16",
-      "marca": "Toyota",
-      "modelo": "Corolla",
-      "anio": 2023,
-      "placa": "6159JSX",
-      "customerId": "2"
+      "marca": "Subaru",
+      "modelo": "Outback AWD",
+      "anio": "2024",
+      "placa": "6510POO",
+      "id": "ca7c"
     }
   ],
   "customers": [
