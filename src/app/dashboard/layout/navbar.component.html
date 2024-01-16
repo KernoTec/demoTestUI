@@ -28,7 +28,10 @@
         </mat-list-item>
         <hr />
         <h3 class="subtitle">Vehículos Asignados</h3>
-        <mat-list-item routerLink="/search" (click)="sidenav.toggle()">
+        <mat-list-item
+          routerLink="/dashboard/search"
+          (click)="sidenav.toggle()"
+        >
           Buscar
         </mat-list-item>
         <hr />
@@ -44,6 +47,9 @@
         &nbsp;&nbsp;kernoTest
       </button>
       <span class="spacer"></span>
+      <button mat-button routerLink="/auth/login">
+        <mat-icon class="mr-2">logout</mat-icon> Logout
+      </button>
     </mat-toolbar>
 
     <div class="container">

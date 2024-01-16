@@ -15,6 +15,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {MatTableModule} from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { LoadingComponent } from '../loading/loading.component';
 @NgModule({
   declarations: [],
 
@@ -34,7 +35,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatSidenavModule,
     MatSnackBarModule,
     MatTableModule,
-    MatToolbarModule,
+    MatToolbarModule
   ]
 })
 export class MaterialModule { }

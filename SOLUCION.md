@@ -11,10 +11,7 @@
 3. Ejecutar el comando ```npm install```
 4. Ejecutar el comando ```npm run server``` (Esto levantara el fake server en el puerto 3000 por defecto)
 5. Ejecutar el comando ```ng serve -o```  (Esto levantara el cliente en el puerto 4200 por defecto)
-
-
-
-
+6. Usuario fake ```user@example.com``` contraseña ```123456```
 
 ### Herramientas Utilizadas
 #### Backend
