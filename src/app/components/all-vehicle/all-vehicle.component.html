@@ -1,0 +1,33 @@
+<div class="container" *ngIf="vehicles">
+    <h2>Mis Vehiculos</h2>
+    <button routerLink="/vehicle/{{id}}/create">Registrar Vehículo</button>
+    <table class="vehicle-table">
+        <thead>
+            <tr>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Año</th>
+                <th>Placa</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let vehicle of vehicles">
+                <td>{{vehicle.marca}}</td>
+                <td>{{vehicle.modelo}}</td>
+                <td>{{vehicle.anio}}</td>
+                <td>{{vehicle.placa}}</td>
+                <td>
+                    <button class="update-button"
+                        [routerLink]="'/vehicle/' + id + '/' + vehicle.id + '/update'">Actualizar</button>
+                    <button class="delete-button" (click)="deleteVehicle(id, vehicle.id)">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <ng-template #emptyState>
+    </ng-template>
+</div>
+<div class="container" *ngIf="vehicles && vehicles.length === 0">
+    <p>No hay vehículos asociados a este cliente.</p>
+</div>
