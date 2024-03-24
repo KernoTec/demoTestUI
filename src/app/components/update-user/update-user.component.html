@@ -1,0 +1,32 @@
+<div class="container" [formGroup]="validateForm">
+    <h2>Actualizar Cliente</h2>
+    <div>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" formControlName="nombre">
+    </div>
+    <div>
+        <label for="paterno">Apellido Paterno:</label>
+        <input type="text" id="paterno" formControlName="paterno">
+    </div>
+    <div>
+        <label for="materno">Apellido Materno:</label>
+        <input type="text" id="materno" formControlName="materno">
+    </div>
+    <div>
+        <label for="tipoDocumento">Tipo de Documento:</label>
+        <input type="text" id="tipoDocumento" formControlName="tipoDocumento">
+    </div>
+    <div>
+        <label for="numeroDocumento">Número de Documento:</label>
+        <input type="text" id="numeroDocumento" formControlName="numeroDocumento">
+    </div>
+    <div>
+        <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+        <input type="date" id="fechaNacimiento" formControlName="fechaNacimiento">
+    </div>
+    <div>
+        <label for="genero">Género:</label>
+        <input type="text" id="genero" formControlName="genero">
+    </div>
+    <button (click)="updateUser()">Actualizar</button>
+</div>

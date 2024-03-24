@@ -1,0 +1,36 @@
+<div class="container" *ngIf="users">
+    <h2>Clientes</h2>
+    <button class="update-button" routerLink="/user">Registrar Nuevo Cliente</button>
+    <table class="user-table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido Paterno</th>
+                <th>Apellido Materno</th>
+                <th>Tipo de Documento</th>
+                <th>Número de Documento</th>
+                <th>Fecha de Nacimiento</th>
+                <th>Género</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td>{{user.nombre}}</td>
+                <td>{{user.paterno}}</td>
+                <td>{{user.materno}}</td>
+                <td>{{user.tipoDocumento}}</td>
+                <td>{{user.numeroDocumento}}</td>
+                <td>{{user.fechaNacimiento}}</td>
+                <td>{{user.genero}}</td>
+                <td>
+                    <button class="update-button" routerLink="/user/{{user.id}}">Actualizar</button>
+                    <button class="delete-button" (click)="deleteUser(user.id)">Eliminar</button>
+                    <button class="all-vehicles-button" routerLink="/vehicle/{{user.id}}">Mis Vehículos</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <ng-template #emptyState>
+    </ng-template>
+</div>
