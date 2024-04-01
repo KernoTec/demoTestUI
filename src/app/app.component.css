@@ -1,0 +1,28 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333; /* Color de fondo de la barra */
+    color: #fff; /* Color del texto */
+    padding: 10px 20px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    /* Otros estilos para tu logo */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    /* Otros estilos para los enlaces de navegación */
+}

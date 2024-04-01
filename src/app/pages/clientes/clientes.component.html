@@ -1,0 +1,66 @@
+<h3>Clientes</h3>
+
+<div>
+    <h4>Nuevo Cliente</h4>
+    <form [formGroup]="formRegist" (submit)="saveClient($event)">
+        <div>
+            <label for="nameClient">Nombres: </label>
+            <input type="text" id="nameClient" formControlName="nameClient" placeholder="Nombres del cliente">
+        </div>
+
+        <div>
+            <label for="firstLastName">Apellido Paterno: </label>
+            <input type="text" id="firstLastName" formControlName="firstLastName" placeholder="Apellido  paterno">
+
+            <label for="secondLastName">Apellido Materno: </label>
+            <input type="text" id="secondLastName" formControlName="secondLastName" placeholder="Apellido materno">
+        </div>
+
+        <div>
+            <label for="typeDocument">Tipo de Documento: </label>
+            <input type="text" id="typeDocument" formControlName="typeDocument"
+                placeholder="Elija el tipo de documento de identificación">
+
+            <label for="documentNumber">Número de Documento: </label>
+            <input type="text" id="documentNumber" formControlName="documentNumber" placeholder="Número de documento">
+        </div>
+
+        <div>
+            <label for="birthDay">Fecha de Nacimiento: </label>
+            <input type="date" id="birthDay" formControlName="birthDay">
+
+            <label for="gender">Genero: </label>
+            <input type="text" id="gender" formControlName="gender" placeholder="Masculino/Femenino">
+        </div>
+
+        <div>
+            <button type="submit">Guardar</button>
+        </div>
+s
+    </form>
+</div>
+
+
+<div>
+    <h4>Lista de Clientes</h4>
+    <table>
+        <thead>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Documento</th>
+            <th>Número Documento</th>
+            <th>Detalles</th>
+            <th>Eliminar</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let client of clientList">
+                <td>{{client.nombre}}</td>
+                <td>{{client.paterno}}</td>
+                <td>{{client.tipo_de_documento}}</td>
+                <td>{{client.numero_de_documento}}</td>
+                <td><button type="button" [routerLink]="['/clientes',  client.id]">Detalles</button></td>
+                <td><button type="button" (click)="deleteClientById(client.id)">Eliminar</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

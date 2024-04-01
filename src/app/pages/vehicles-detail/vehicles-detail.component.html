@@ -1,0 +1,35 @@
+<h3>Detalles del Vehiculo</h3>
+
+
+
+<div >
+    <h4>Editar</h4>
+    <form [formGroup]="formUpdate" (ngSubmit)="updateVehicle($event)">
+        <div>
+            <label for="marca">Marca del vehiculo: </label>
+            <input type="text" id="marca" formControlName="marca" value="{{vehicle?.marca}}">
+        </div>
+
+        <div>
+            <label for="modelo">Modelo del Vehiculo: </label>
+            <input type="text" id="modelo" formControlName="modelo" value="{{vehicle?.modelo}}">
+        </div>
+
+        <div>
+            <label for="anio">Año de fabricación: </label>
+            <input type="text" id="anio" formControlName="anio" value="{{vehicle?.anio}}">
+
+        </div>
+
+        <div>
+
+            <label for="placa">Número de placa: </label>
+            <input type="text" id="placa" formControlName="placa" value="{{vehicle?.placa}}">
+        </div>
+
+        <div>
+            <button type="submit">Guardar</button>
+        </div>
+
+    </form>
+</div>

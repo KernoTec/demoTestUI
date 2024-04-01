@@ -1,0 +1,59 @@
+<h3> Vehiculos</h3>
+<div>
+    <form [formGroup]="formRegist" (ngSubmit)="registVehicle($event)">
+        <div>
+            <label for="marca">Marca del vehiculo: </label>
+            <input type="text" id="marca" formControlName="marca" placeholder="Ingrese la marca del vehículo" />
+        </div>
+
+        <div>
+            <label for="modelo">Modelo del Vehiculo: </label>
+            <input type="text" id="modelo" formControlName="modelo" placeholder="Ingrese el Modelo" />
+        </div>
+
+        <div>
+            <label for="anio">Año de fabricación: </label>
+            <input type="text" id="anio" formControlName="anio" placeholder="Ingrese el Año de fabricación" />
+
+        </div>
+
+        <div>
+
+            <label for="placa">Número de placa: </label>
+            <input type="text" id="placa" formControlName="placa" placeholder="Ingrese el número de placa" />
+        </div>
+
+        <div>
+            <button type="submit">Guardar</button>
+        </div>
+
+    </form>
+</div>
+<hr>
+<div>
+    <h4>Lista de Clientes</h4>
+    <table>
+        <thead>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Año</th>
+            <th>Placa</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let vehicle of vehiclesList">
+                <td>{{vehicle.marca}}</td>
+                <td>{{vehicle.modelo}}</td>
+                <td>{{vehicle.anio}}</td>
+                <td>{{vehicle.placa}}</td>
+                <td><button type="button" [routerLink]="['/vehiculos',  vehicle.id]">Editar</button></td>
+                <td><button type="button" (click)="deleteVehicleById(vehicle.id)">Eliminar</button></td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+

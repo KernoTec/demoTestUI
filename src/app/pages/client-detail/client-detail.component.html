@@ -1,0 +1,40 @@
+<h3>Detalles del Cliente</h3>
+
+<div>
+    <form [formGroup]="formUpdate" (submit)="updateClient($event)">
+        <div>
+            <label for="nameClient">Nombres: </label>
+            <input type="text" id="nameClient" formControlName="nameClient" value="{{client?.nombre}}">
+        </div>
+
+        <div>
+            <label for="firstLastName">Apellido Paterno: </label>
+            <input type="text" id="firstLastName" formControlName="firstLastName" value="{{client?.paterno}}">
+
+            <label for="secondLastName">Apellido Materno: </label>
+            <input type="text" id="secondLastName" formControlName="secondLastName" value="{{client?.materno}}">
+        </div>
+
+        <div>
+            <label for="typeDocument">Tipo de Documento: </label>
+            <input type="text" id="typeDocument" formControlName="typeDocument" value="{{client?.tipo_de_documento}}">
+
+            <label for="documentNumber">Número de Documento: </label>
+            <input type="text" id="documentNumber" formControlName="documentNumber"
+                value="{{client?.numero_de_documento}}">
+        </div>
+
+        <div>
+            <label for="birthDay">Fecha de Nacimiento: </label>
+            <input type="date" id="birthDay" formControlName="birthDay" value="{{client?.fecha_de_nacimiento}}">
+
+            <label for="gender">Genero: </label>
+            <input type="text" id="gender" formControlName="gender" value="{{client?.genero}}">
+        </div>
+
+        <div>
+            <button type="submit">Guardar</button>
+        </div>
+
+    </form>
+</div>

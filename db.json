@@ -1,0 +1,149 @@
+{
+  "clientes": [
+    {
+      "id": "1",
+      "nombre": "JUAN",
+      "paterno": "PEREZ",
+      "materno": "LUNA",
+      "tipo_de_documento": "Cédula de Identidad",
+      "numero_de_documento": "675554",
+      "fecha_de_nacimiento": "1976-06-04",
+      "genero": "masculino"
+    },
+    {
+      "id": "2",
+      "nombre": "PAOLA",
+      "paterno": "IRIRARTE",
+      "materno": "GEMIO",
+      "tipo_de_documento": "Cédula de Identidad",
+      "numero_de_documento": "99886",
+      "fecha_de_nacimiento": "1986-05-11",
+      "genero": "femenino"
+    },
+    {
+      "id": "3",
+      "nombre": "FERNANDO",
+      "paterno": "ALONSO",
+      "materno": "PEÑARANDA",
+      "tipo_de_documento": "Cédula de Identidad",
+      "numero_de_documento": "677726",
+      "fecha_de_nacimiento": "1996-11-22",
+      "genero": "masculino"
+    },
+    {
+      "id": "4",
+      "nombre": "IRAIS",
+      "paterno": "GOMEZ",
+      "materno": "SANABRIA",
+      "tipo_de_documento": "Cédula de Identidad",
+      "numero_de_documento": "3324450",
+      "fecha_de_nacimiento": "1989-07-04",
+      "genero": "femenino"
+    },
+    {
+      "id": "5",
+      "nombre": "LAURA",
+      "paterno": "SANCHES",
+      "materno": "GARCIA",
+      "tipo_de_documento": "Cédula de Identidad",
+      "numero_de_documento": "2456778",
+      "fecha_de_nacimiento": "1996-09-13",
+      "genero": "femenino"
+    },
+    {
+      "id": "c3fb",
+      "nombre": "Jose",
+      "paterno": "Loza",
+      "materno": "Duchen",
+      "tipo_de_documento": "Cédula de Identidad",
+      "numero_de_documento": "999999",
+      "fecha_de_nacimiento": "2011-03-03",
+      "genero": "Masculino"
+    }
+  ],
+  "vehiculos": [
+    {
+      "id": "1",
+      "marca": "TOYOTA",
+      "modelo": "RAV4",
+      "anio": 2011,
+      "placa": "2214-IRF"
+    },
+    {
+      "id": "2",
+      "marca": "NISSAN",
+      "modelo": "MURANO",
+      "anio": 2009,
+      "placa": "2133-FTT"
+    },
+    {
+      "id": "3",
+      "marca": "TOYOTA",
+      "modelo": "COROLLA",
+      "anio": 2011,
+      "placa": "2214-ARR"
+    },
+    {
+      "id": "4",
+      "marca": "JEEP",
+      "modelo": "PATRIOT",
+      "anio": 2016,
+      "placa": "2113-GGM"
+    },
+    {
+      "id": "5",
+      "marca": "SUZUKI",
+      "modelo": "SWITF",
+      "anio": 2019,
+      "placa": "3467-MMD"
+    },
+    {
+      "id": "6",
+      "marca": "Toyota",
+      "modelo": "COROLLA",
+      "anio": 2010,
+      "placa": "2214-ARR"
+    },
+    {
+      "id": "7ceb",
+      "marca": "SUZUKI",
+      "modelo": "VITARA",
+      "anio": 2013,
+      "placa": "3111-MMD"
+    },
+    {
+      "id": "5812",
+      "marca": "JAC",
+      "modelo": "JS2",
+      "anio": "2018",
+      "placa": "5667-IHH"
+    }
+  ],
+  "asignaciones": [
+    {
+      "id": "1",
+      "cliente_id": "3",
+      "vehiculo_id": "4"
+    },
+    {
+      "id": "2",
+      "cliente_id": "3",
+      "vehiculo_id": "3"
+    },
+    {
+      "id": "3",
+      "cliente_id": "2",
+      "vehiculo_id": "6"
+    },
+    {
+      "id": "2404",
+      "cliente_id": "2",
+      "vehiculo_id": "3"
+    },
+    {
+      "id": "19b8",
+      "cliente_id": "1",
+      "vehiculo_id": "5812"
+    }
+  ]
+}

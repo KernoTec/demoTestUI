@@ -1,0 +1,42 @@
+<h3>Vehculos asignados a Clientes</h3>
+<div>
+    <h4>Nueva Asigacion</h4>
+    <form [formGroup]="formRegist" (ngSubmit)="registAssign($event)">
+
+
+        <label for="clienteAsignar">Cliente: </label>
+        <select id="clienteAsignar" formControlName="clienteAsignar">
+            <option *ngFor="let client of allClients" [value]="client.id">{{client.numero_de_documento}}</option>
+        </select>
+        <label for="vehiculoAsignar">Vehiculo</label>
+        <select id="vehicuoAsignar" formControlName="vehiculoAsignar">
+            <option *ngFor="let vehicle of allVehicles" [value]="vehicle.id">{{vehicle.placa}}</option>
+        </select>
+        <button type="submit">Guardar</button>
+    </form>
+
+</div>
+<hr>
+<div>
+    <h4> Lista de Vehiculos Asignados</h4>
+    <table>
+        <thead>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Documento</th>
+            <th>Modelo</th>
+            <th>Marca</th>
+            <th>Placa</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let assigned of clientVehicle">
+                <td>{{assigned.nombreCliente}}</td>
+                <td>{{assigned.apellidoCliente}}</td>
+                <td>{{assigned.documentoCliente}}</td>
+                <td>{{assigned.marcaVehiculo}}</td>
+                <td>{{assigned.modeloVehiculo}}</td>
+                <td>{{assigned.placaVehiculo}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
