@@ -34,7 +34,7 @@ export class ModalClienteComponent implements OnInit {
       materno: ['', [Validators.required, Validators.minLength(2)]],
       tipoDocumento: ['', [Validators.required]],
       numeroDocumento: ['', [Validators.required, Validators.pattern(/^[A-Za-z0-9]+$/)]],
-      fechaNacimiento: ['', [Validators.required]], // Campo de fecha
+      fechaNacimiento: ['', [Validators.required]],
       genero: ['', [Validators.required]]
     });
   }
@@ -54,7 +54,7 @@ export class ModalClienteComponent implements OnInit {
 
   private formatFechaNacimiento(fecha: string): string {
     const date = new Date(fecha);
-    return date.toISOString(); // Formato "1978-04-05T15:30:00"
+    return date.toISOString();
   }
 
   private resetForm(): void {

@@ -22,7 +22,6 @@
     <tbody>
     <tr *ngFor="let cliente of clientes$ | async">
       <ng-container *ngIf="!cliente.deleted">
-        <!-- Nombre -->
         <td (mouseleave)="isEditing(editableNombre)">
           <div style="position: relative" (click)="editableDiv(editableNombre, cliente)" contenteditable="false" #editableNombre>
             <span #nombre>{{ cliente.nombre }}</span>
@@ -33,7 +32,6 @@
           </div>
         </td>
 
-        <!-- Apellido Paterno -->
         <td (mouseleave)="isEditing(editablePaterno)">
           <div style="position: relative" (click)="editableDiv(editablePaterno, cliente)" contenteditable="false" #editablePaterno>
             <span #paterno>{{ cliente.paterno }}</span>
@@ -44,7 +42,6 @@
           </div>
         </td>
 
-        <!-- Apellido Materno -->
         <td (mouseleave)="isEditing(editableMaterno)">
           <div style="position: relative" (click)="editableDiv(editableMaterno, cliente)" contenteditable="false" #editableMaterno>
             <span #materno>{{ cliente.materno }}</span>
@@ -55,21 +52,17 @@
           </div>
         </td>
 
-        <!-- Tipo Documento -->
         <td>{{ cliente.tipoDocumento }}</td>
 
-        <!-- Número Documento -->
         <td>{{ cliente.numeroDocumento }}</td>
 
-        <!-- Fecha Nacimiento -->
         <td>{{ cliente.fechaNacimiento | date }}</td>
 
-        <!-- Género -->
         <td>{{ cliente.genero }}</td>
 
-        <!-- Acciones -->
         <td>
-          <button class="btn btn-danger btn-sm" (click)="eliminarCliente(cliente.id)">Eliminar</button>
+          <button class="btn btn-danger btn-sm mb-2" (click)="eliminarCliente(cliente.id)">Eliminar</button>
+          <a  [routerLink]="['../dashboard', cliente.id]" class="btn btn-primary btn-sm">Ver Autos</a>
         </td>
       </ng-container>
     </tr>
