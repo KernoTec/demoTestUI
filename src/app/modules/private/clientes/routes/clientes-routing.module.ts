@@ -23,7 +23,6 @@ const vehiculosRoutes: Routes = [
 
 
 @NgModule({
-  declarations: [],
   imports: [
     RouterModule.forChild(vehiculosRoutes)
   ],
