@@ -1,0 +1,39 @@
+<div class="modal fade" id="vehiculoModal" style="display: contents" tabindex="-1" aria-labelledby="vehiculoModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="vehiculoModalLabel">Agregar Vehículo</h5>
+        <button type="button"
+                class="btn btn-close"
+                (click)="closeModal.emit()">X
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="vehiculoForm" (ngSubmit)="onSubmit()">
+          <div class="mb-3">
+            <label for="marca" class="form-label">Marca</label>
+            <input type="text" id="marca" class="form-control" formControlName="marca" required>
+          </div>
+          <div class="mb-3">
+            <label for="modelo" class="form-label">Modelo</label>
+            <input type="text" id="modelo" class="form-control" formControlName="modelo" required>
+          </div>
+          <div class="mb-3">
+            <label for="anio" class="form-label">Año</label>
+            <input type="number" id="anio" class="form-control" formControlName="anio" required>
+          </div>
+          <div class="mb-3">
+            <label for="placa" class="form-label">Placa</label>
+            <input type="text" id="placa" class="form-control" formControlName="placa" required>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="closeModal.emit()">Cancelar</button>
+        <button type="button" class="btn btn-dark" [disabled]="vehiculoForm.invalid" (click)="onSubmit()">Agregar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

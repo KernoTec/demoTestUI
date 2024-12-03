@@ -1,0 +1,9 @@
+.btn-agregar {
+  background-color: #343a40;
+  color: #fff;
+  border: 1px solid #343a40;
+}
+.btn-agregar:hover {
+  background-color: #ffc107;
+  color: #343a40;
+}
