@@ -1,0 +1,75 @@
+<section>
+  <h1>Dashboard Vehiculos</h1>
+
+  <div class="d-flex justify-content-between mb-3">
+    <button class="btn btn-primary btn-agregar" (click)="agregarVehiculo()">Agregar</button>
+    <input type="text" id="buscador" class="form-control w-50" placeholder="Buscar..." onkeyup="buscar()">
+  </div>
+
+  <table class="table table-striped table-hover">
+    <thead class="table-dark">
+    <tr>
+      <th>Marca</th>
+      <th>Modelo</th>
+      <th>Año</th>
+      <th>Placa</th>
+      <th>Acciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let vehiculo of vehiculos$ | async">
+      <ng-container *ngIf="!vehiculo.deleted">
+        <!-- Marca -->
+        <td (mouseleave)="isEditing(editableMarca)">
+          <div style="position: relative" (click)="editableDiv(editableMarca, vehiculo)" contenteditable="false" #editableMarca>
+            <span #marca>{{ vehiculo.marca }}</span>
+            <div *ngIf="isEdit && actualVehiculo?.id === vehiculo.id" style="position: absolute;display: flex;gap: 10px;transform: scale(0.5);">
+              <button class="btn btn-primary" (click)="updateVehiculo(editableMarca, vehiculo, 'marca', marca)">&#x2714;</button>
+              <button class="btn btn-danger" (click)="isEditing(editableMarca)">X</button>
+            </div>
+          </div>
+        </td>
+
+        <!-- Modelo -->
+        <td (mouseleave)="isEditing(editableModelo)">
+          <div style="position: relative" (click)="editableDiv(editableModelo, vehiculo)" contenteditable="false" #editableModelo>
+            <span #modelo>{{ vehiculo.modelo }}</span>
+            <div *ngIf="isEdit && actualVehiculo?.id === vehiculo.id" style="position: absolute;display: flex;gap: 10px;transform: scale(0.5);">
+              <button class="btn btn-primary" (click)="updateVehiculo(editableModelo, vehiculo, 'modelo', modelo)">&#x2714;</button>
+              <button class="btn btn-danger" (click)="isEditing(editableModelo)">X</button>
+            </div>
+          </div>
+        </td>
+
+        <!-- Año -->
+        <td (mouseleave)="isEditing(editableAno)">
+          <div style="position: relative" (click)="editableDiv(editableAno, vehiculo)" contenteditable="false" #editableAno>
+            <span #ano>{{ vehiculo.ano }}</span>
+            <div *ngIf="isEdit && actualVehiculo?.id === vehiculo.id" style="position: absolute;display: flex;gap: 10px;transform: scale(0.5);">
+              <button class="btn btn-primary" (click)="updateVehiculo(editableAno, vehiculo, 'ano', ano)">&#x2714;</button>
+              <button class="btn btn-danger" (click)="isEditing(editableAno)">X</button>
+            </div>
+          </div>
+        </td>
+
+        <!-- Placa -->
+        <td (mouseleave)="isEditing(editablePlaca)">
+          <div style="position: relative" (click)="editableDiv(editablePlaca, vehiculo)" contenteditable="false" #editablePlaca>
+            <span #placa>{{ vehiculo.placa }}</span>
+            <div *ngIf="isEdit && actualVehiculo?.id === vehiculo.id" style="position: absolute;display: flex;gap: 10px;transform: scale(0.5);">
+              <button class="btn btn-primary" (click)="updateVehiculo(editablePlaca, vehiculo, 'placa', placa)">&#x2714;</button>
+              <button class="btn btn-danger" (click)="isEditing(editablePlaca)">X</button>
+            </div>
+          </div>
+        </td>
+
+        <!-- Acciones -->
+        <td>
+          <button class="btn btn-danger btn-sm" (click)="eliminarVehiculo(vehiculo.id)">Eliminar</button>
+        </td>
+      </ng-container>
+    </tr>
+    </tbody>
+  </table>
+  <div #modalContainer></div>
+</section>

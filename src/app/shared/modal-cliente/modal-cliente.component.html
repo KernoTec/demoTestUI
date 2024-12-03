@@ -1,0 +1,53 @@
+<div class="modal fade" id="personaModal" style="display: contents" tabindex="-1" aria-labelledby="personaModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="personaModalLabel">Agregar Persona</h5>
+        <button type="button"
+                class="btn btn-close"
+                (click)="closeModal.emit()">X
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="personaForm" (ngSubmit)="onSubmit()">
+          <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" id="nombre" class="form-control" formControlName="nombre" required>
+          </div>
+          <div class="mb-3">
+            <label for="paterno" class="form-label">Apellido Paterno</label>
+            <input type="text" id="paterno" class="form-control" formControlName="paterno" required>
+          </div>
+          <div class="mb-3">
+            <label for="materno" class="form-label">Apellido Materno</label>
+            <input type="text" id="materno" class="form-control" formControlName="materno" required>
+          </div>
+          <div class="mb-3">
+            <label for="tipoDocumento" class="form-label">Tipo de Documento</label>
+            <input type="text" id="tipoDocumento" class="form-control" formControlName="tipoDocumento" required>
+          </div>
+          <div class="mb-3">
+            <label for="numeroDocumento" class="form-label">Número de Documento</label>
+            <input type="text" id="numeroDocumento" class="form-control" formControlName="numeroDocumento" required>
+          </div>
+          <div class="mb-3">
+            <label for="fechaNacimiento" class="form-label">Fecha de Nacimiento</label>
+            <input type="date" id="fechaNacimiento" class="form-control" formControlName="fechaNacimiento" required>
+          </div>
+          <div class="mb-3">
+            <label for="genero" class="form-label">Género</label>
+            <select id="genero" class="form-control" formControlName="genero" required>
+              <option value="MASCULINO">Masculino</option>
+              <option value="FEMENINO">Femenino</option>
+            </select>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="closeModal.emit()">Cancelar</button>
+        <button type="submit" class="btn btn-dark" [disabled]="personaForm.invalid" (click)="onSubmit()">Agregar</button>
+      </div>
+    </div>
+  </div>
+</div>

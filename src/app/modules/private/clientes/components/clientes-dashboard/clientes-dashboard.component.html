@@ -1,0 +1,73 @@
+<section>
+  <h1>Dashboard Clientes</h1>
+
+  <div class="d-flex justify-content-between mb-3">
+    <button class="btn btn-primary btn-agregar" (click)="agregarCliente()">Agregar Cliente</button>
+    <input type="text" id="buscador" class="form-control w-50" placeholder="Buscar...">
+  </div>
+
+  <table class="table table-striped table-hover">
+    <thead class="table-dark">
+    <tr>
+      <th>Nombre</th>
+      <th>Apellido Paterno</th>
+      <th>Apellido Materno</th>
+      <th>Tipo Documento</th>
+      <th>Número Documento</th>
+      <th>Fecha Nacimiento</th>
+      <th>Género</th>
+      <th>Acciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let cliente of clientes$ | async">
+      <ng-container *ngIf="!cliente.deleted">
+        <td (mouseleave)="isEditing(editableNombre)">
+          <div style="position: relative" (click)="editableDiv(editableNombre, cliente)" contenteditable="false" #editableNombre>
+            <span #nombre>{{ cliente.nombre }}</span>
+            <div *ngIf="isEdit && actualCliente?.id === cliente.id" style="position: absolute; display: flex; gap: 10px; transform: scale(0.5);">
+              <button class="btn btn-primary" (click)="updateCliente(editableNombre, cliente, 'nombre', nombre)">&#x2714;</button>
+              <button class="btn btn-danger" (click)="isEditing(editableNombre)">X</button>
+            </div>
+          </div>
+        </td>
+
+        <td (mouseleave)="isEditing(editablePaterno)">
+          <div style="position: relative" (click)="editableDiv(editablePaterno, cliente)" contenteditable="false" #editablePaterno>
+            <span #paterno>{{ cliente.paterno }}</span>
+            <div *ngIf="isEdit && actualCliente?.id === cliente.id" style="position: absolute; display: flex; gap: 10px; transform: scale(0.5);">
+              <button class="btn btn-primary" (click)="updateCliente(editablePaterno, cliente, 'paterno', paterno)">&#x2714;</button>
+              <button class="btn btn-danger" (click)="isEditing(editablePaterno)">X</button>
+            </div>
+          </div>
+        </td>
+
+        <td (mouseleave)="isEditing(editableMaterno)">
+          <div style="position: relative" (click)="editableDiv(editableMaterno, cliente)" contenteditable="false" #editableMaterno>
+            <span #materno>{{ cliente.materno }}</span>
+            <div *ngIf="isEdit && actualCliente?.id === cliente.id" style="position: absolute; display: flex; gap: 10px; transform: scale(0.5);">
+              <button class="btn btn-primary" (click)="updateCliente(editableMaterno, cliente, 'materno', materno)">&#x2714;</button>
+              <button class="btn btn-danger" (click)="isEditing(editableMaterno)">X</button>
+            </div>
+          </div>
+        </td>
+
+        <td>{{ cliente.tipoDocumento }}</td>
+
+        <td>{{ cliente.numeroDocumento }}</td>
+
+        <td>{{ cliente.fechaNacimiento | date }}</td>
+
+        <td>{{ cliente.genero }}</td>
+
+        <td>
+          <button class="btn btn-danger btn-sm mb-2" (click)="eliminarCliente(cliente.id)">Eliminar</button>
+          <a  [routerLink]="['../dashboard', cliente.id]" class="btn btn-primary btn-sm mb-2">Ver Autos</a>
+          <a  [routerLink]="['../asignar', cliente.id]" class="btn btn-primary btn-sm">Asignar Auto</a>
+        </td>
+      </ng-container>
+    </tr>
+    </tbody>
+  </table>
+  <div #modalContainer></div>
+</section>

@@ -1,3 +1,19 @@
-<h1>Prueba</h1>
-    
-<router-outlet></router-outlet>
+<div class="container-fluid vh-100">
+  <div class="row h-100">
+    <aside class="col-2 d-flex flex-column p-3 border-end">
+      <h4 class="text-center">Menú</h4>
+      <nav class="nav flex-column ">
+        <a class="nav-link mb-2" routerLink="/clientes"  routerLinkActive="active"  id="clientes">Clientes</a>
+        <a class="nav-link" routerLink="/vehiculos"  routerLinkActive="active"  id="vehiculos">Vehículos</a>
+      </nav>
+    </aside>
+
+    <main class="col-10">
+      <div class="p-4">
+        <div id="vista-contenido">
+          <router-outlet/>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
