@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {MainVehiculosComponent} from './views/main-vehiculos/main-vehiculos.component';
 import {DashboardComponent} from './components/dashboard/dashboard.component';
-import {CountriesRoutingModule} from './routes/vehiculos-routing.module';
+import {VehiculoRoutingModule} from './routes/vehiculos-routing.module';
 import {ModalComponent} from "../../../shared/modal/modal.component";
 
 @NgModule({
@@ -12,7 +12,7 @@ import {ModalComponent} from "../../../shared/modal/modal.component";
   ],
   imports: [
     CommonModule,
-    CountriesRoutingModule,
+    VehiculoRoutingModule,
     ModalComponent
   ]
 })

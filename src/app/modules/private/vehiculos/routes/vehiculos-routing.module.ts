@@ -31,5 +31,5 @@ const vehiculosRoutes: Routes = [
     RouterModule
   ]
 })
-export class CountriesRoutingModule {
+export class VehiculoRoutingModule {
 }

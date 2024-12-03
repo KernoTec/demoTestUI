@@ -1,16 +1,16 @@
 import {RouterModule, Routes} from '@angular/router';
 import {NgModule} from '@angular/core';
-import {MainVehiculosComponent} from '../views/main-vehiculos/main-vehiculos.component';
-import {DashboardComponent} from '../components/dashboard/dashboard.component';
+import {MainClientesComponent} from "../views/main-clientes/main-clientes.component";
+import {ClientesDashboardComponent} from "../components/clientes-dashboard/clientes-dashboard.component";
 
 const vehiculosRoutes: Routes = [
   {
     path: '',
-    component: MainVehiculosComponent,
+    component: MainClientesComponent,
     children: [
       {
         path: 'dashboard',
-        component: DashboardComponent
+        component: ClientesDashboardComponent
       },
       {
         path: '',
@@ -31,5 +31,5 @@ const vehiculosRoutes: Routes = [
     RouterModule
   ]
 })
-export class CountriesRoutingModule {
+export class ClientesRoutingModule {
 }
