@@ -1,5 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
+import {Observable} from "rxjs";
+import {IVehiculoResponse} from "../../../../../api/responses/vehiculo-response.interface";
+import {VehiculoService} from "../../../services/vehiculo.service";
 
 @Component({
   selector: 'app-cliente-details',
@@ -8,17 +11,18 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class ClienteDetailsComponent implements OnInit {
   clienteId: string;
+  public vehiculos$: Observable<IVehiculoResponse[]>;
 
-  constructor(private route: ActivatedRoute) {
-    this.clienteId = ''
+  constructor(private route: ActivatedRoute, private _vehiculoService: VehiculoService) {
+    this.clienteId = '';
+    this.vehiculos$ = new Observable<IVehiculoResponse[]>();
   }
 
   ngOnInit(): void {
-    // Obtén el parámetro 'id' desde la ruta
     this.route.paramMap.subscribe(params => {
       this.clienteId = params.get('id')!;
       console.log('Cliente ID:', this.clienteId);
-      // Aquí puedes cargar los detalles del cliente basado en el ID
+      this.vehiculos$ = this._vehiculoService.getVehiculosByIdCliente(this.clienteId);
     });
   }
 }

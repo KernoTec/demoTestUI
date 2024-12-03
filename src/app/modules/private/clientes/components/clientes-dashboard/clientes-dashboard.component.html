@@ -62,7 +62,8 @@
 
         <td>
           <button class="btn btn-danger btn-sm mb-2" (click)="eliminarCliente(cliente.id)">Eliminar</button>
-          <a  [routerLink]="['../dashboard', cliente.id]" class="btn btn-primary btn-sm">Ver Autos</a>
+          <a  [routerLink]="['../dashboard', cliente.id]" class="btn btn-primary btn-sm mb-2">Ver Autos</a>
+          <a  [routerLink]="['../asignar', cliente.id]" class="btn btn-primary btn-sm">Asignar Auto</a>
         </td>
       </ng-container>
     </tr>

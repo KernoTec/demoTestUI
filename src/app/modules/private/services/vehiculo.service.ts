@@ -19,6 +19,11 @@ export class VehiculoService {
       .pipe(map(r => r.response))
   }
 
+  public getVehiculosByIdCliente(id: string): Observable<IVehiculoResponse[]> {
+    return this._httpClient.get<DataResponse<IVehiculoResponse[]>>(`${this.URL}/vehiculos/clientes/${id}`)
+      .pipe(map(r => r.response))
+  }
+
   public deleteVehiculo(id: string): Observable<IVehiculoResponse> {
     return this._httpClient
       .delete<DataResponse<IVehiculoResponse>>(`${this.URL}/vehiculos/${id}`)
